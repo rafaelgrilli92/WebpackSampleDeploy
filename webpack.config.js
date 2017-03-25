@@ -18,16 +18,16 @@ module.exports = {
   },
   module: {
   	rules: [
-		{
-			use: 'babel-loader',
-	  		test: /\.js$/,
-	  		exclude: /node_modules/
-		},
-		{
-			use: ['style-loader', 'css-loader'],
-			test: /\.css$/,
-			exclude: /node_modules/
-		}
+			{
+					use: 'babel-loader',
+					test: /\.js$/,
+					exclude: /node_modules/
+			},
+			{
+				use: ['style-loader', 'css-loader'],
+				test: /\.css$/,
+				exclude: /node_modules/
+			}
   	]
   },
   plugins: [
@@ -37,8 +37,8 @@ module.exports = {
   	new HtmlWebpackPlugin({
   		template: 'src/index.html'
   	}),
-	new webpack.DefinePlugin({
-		'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV)
-	})
+		new webpack.DefinePlugin({
+			'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV)
+		})
   ]
 };
